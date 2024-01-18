@@ -7,61 +7,83 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnEnableMobileData"
+    <!-- Toggle buttons for various actions -->
+    <ToggleButton
+        android:id="@+id/toggleTurnOffScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enable Mobile Data"
+        android:textOff="Turn Screen Off"
+        android:textOn="Turn Screen On"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <Button
-        android:id="@+id/btnDisableMobileData"
+    <ToggleButton
+        android:id="@+id/toggleMobileData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Disable Mobile Data"
-        app:layout_constraintTop_toBottomOf="@+id/btnEnableMobileData"
+        android:textOff="Toggle Mobile Data On"
+        android:textOn="Toggle Mobile Data Off"
+        app:layout_constraintTop_toBottomOf="@+id/toggleTurnOffScreen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <ToggleButton
+        android:id="@+id/toggleAirplaneMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="Toggle  Airplane Mode On"
+        android:textOn="Toggle Airplane Mode  Off"
+        app:layout_constraintTop_toBottomOf="@+id/toggleMobileData"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+    <Button
+        android:id="@+id/btnSendSMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send SMS"
+        app:layout_constraintTop_toBottomOf="@+id/toggleAirplaneMode"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
     <Button
-        android:id="@+id/btnEnableAirplaneMode"
+        android:id="@+id/btnMakeCall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enable Airplane Mode"
-        app:layout_constraintTop_toBottomOf="@+id/btnDisableMobileData"
+        android:layout_below="@id/btnSendSMS"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnSendSMS"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        android:text="Make Call"
+        android:layout_centerHorizontal="true"
+         />
 
-    <Button
-        android:id="@+id/btnDisableAirplaneMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Disable Airplane Mode"
-        app:layout_constraintTop_toBottomOf="@+id/btnEnableAirplaneMode"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+    <!-- Other UI components -->
 
-    <Button
-        android:id="@+id/btnTurnOffScreen"
+    <TextView
+        android:id="@+id/cpuUsageTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Turn Off Screen"
-        app:layout_constraintTop_toBottomOf="@+id/btnDisableAirplaneMode"
+        android:text="CPU Usage: "
+        app:layout_constraintTop_toBottomOf="@+id/btnMakeCall"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="16dp"/>
+
+
+
+    <!-- Buttons for other actions -->
 
     <TextView
         android:id="@+id/batteryTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/btnTurnOffScreen"
+        app:layout_constraintTop_toBottomOf="@+id/cpuUsageTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
@@ -102,12 +124,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
     <TextView
-        android:id="@+id/cpuUsageTextView"
+        android:id="@+id/textViewSignalStrength"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CPU Usage: "
-        app:layout_constraintTop_toBottomOf="@+id/btnTurnOffScreen"
+        android:text="Signal Strength: N/A"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/deviceInfoTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
